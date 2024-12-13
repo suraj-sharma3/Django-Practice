@@ -1,0 +1,20 @@
+<!-- The templating engine that Django uses is similar to jinja 2, which is a web template engine for python -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+        <title>Dango Blog App - { title } </title>
+    {% else %}
+        <title>Dango Blog App </title>
+    {% endif %}
+</head>
+<body>
+    {% for post in posts %} 
+        <h1>{{ post.title }}</h1> 
+        <p>{{ post.author }} on {{ post.date_posted }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %} 
+</body>
+</html>
+
