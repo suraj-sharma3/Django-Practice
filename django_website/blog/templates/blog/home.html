@@ -4,9 +4,16 @@
 <!-- home.html inherits the base.html template -->
 {% block content %}
     {% for post in posts %} 
-        <h1>{{ post.title }}</h1> 
-        <p>{{ post.author }} on {{ post.date_posted }}</p>
-        <p>{{ post.content }}</p>
+        <article class="media content-section">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ post.author }}</a>
+                <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
     {% endfor %} 
 {% endblock content %}
 <!-- We can even just write endblock in the above line, that will also work. we have mentioned the name of the block "content" because putting the name of the blocks helps in distinguishing between different blocks of a page if the page contains multiple blocks -->
